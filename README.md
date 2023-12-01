@@ -370,3 +370,9 @@ git push origin develop
 git push origin main
 
 ```
+
+## Ресурсы
+
+[Git Documentation](https://git-scm.com/doc)
+[Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials)
+[Pro Git Book](https://git-scm.com/book/en/v2)
