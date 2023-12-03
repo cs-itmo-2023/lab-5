@@ -3,8 +3,8 @@ Git advanced workshop
 
 ## Предварительные требования:
 
-⋅⋅⋅Основы работы с Git (лабораторная работа по введению в Git).
-⋅⋅⋅Установленный Git на локальной машине.
+1. Основы работы с Git (лабораторная работа по введению в Git).
+2. Установленный Git на локальной машине.
 
 
 ## Введение
@@ -217,7 +217,6 @@ git pull origin main
 git add README.md
 git commit -m "Resolved conflict in chapter 2"
 git push origin main
-
 ```
 
 ## Автоматизация проверки формата файлов при коммите
@@ -230,19 +229,8 @@ git push origin main
 
 2. Решение
 
-  * Создайте скрипт (например, check_format.sh), который будет выполнять проверку формата .txt файлов. Этот скрипт может использовать инструменты, такие как grep или другие, чтобы проверить соответствие формату.
+  * Создайте bash-скрипт (например, check_format.sh), который будет выполнять проверку формата .txt файлов. Этот скрипт может использовать инструменты, такие как grep или другие, чтобы проверить соответствие формату.
 
-```
-#!/bin/bash
-
-for file in $(git diff --cached --name-only | grep '\.txt$'); do
-    if ! some_format_check_command "$file"; then
-        echo "Ошибка: Файл $file не соответствует формату."
-        exit 1
-    fi
-done
-
-``` 
   * Добавление скрипта в репозиторий.
     Поместите скрипт в папку, например, в .git/hooks и назовите его pre-commit. Убедитесь, что у него есть права на выполнение.
 
@@ -295,12 +283,9 @@ git flow feature start task-management
 4. Внесите изменения в код для добавления функционала управления задачами (например, в файл task_manager.py):
 
 ```
-# task_manager.py
-
 def create_task(title, description):
     # Логика создания задачи
     print(f"Создана новая задача: {title}")
-
 ```
 
 Выполните коммит изменения по мере разработки:
@@ -370,9 +355,13 @@ git push origin develop
 git push origin main
 
 ```
+## Требования к отчету:
+
+Отчет должен быть полным и отражать все выполненные действия. Подготовьте свой собственный Markdown файл, в котором будут отражены все выполненные скрипты, команды (и результат их выполнения), например скриншотами. Если необходимо представить код или алгоритм -- смотрите правила оформления Markdown-a.
 
 ## Ресурсы
 
-[Git Documentation](https://git-scm.com/doc)
-[Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials)
-[Pro Git Book](https://git-scm.com/book/en/v2)
+1. [Git Documentation](https://git-scm.com/doc)
+2. [Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials)
+3. [Pro Git Book](https://git-scm.com/book/en/v2)
+4. [Markdown Guidelines](https://docs.github.com/ru/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
